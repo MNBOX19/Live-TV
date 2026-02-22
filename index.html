@@ -170,7 +170,7 @@
                     <div class="key"><div class="dot" style="background:#ff4444"></div> TELA CHEIA (R)</div>
                     <div class="key"><div class="dot" style="background:#00C851"></div> TOPO (G)</div>
                     <div class="key"><div class="dot" style="background:#ffbb33"></div> BUSCAR (Y)</div>
-                    <div class="key"><div class="dot" style="background:#33b5e5"></div> SAIR (VOLTAR)</div>
+                    <div class="key"><div class="dot" style="background:#33b5e5"></div> TROCAR CONTA (B)</div>
                 </div>
             </div>
         </div>
@@ -543,7 +543,6 @@
                 if(this.zone===3) { this.zone=2; this.syncFocusToPlaying(); this.updateFocus(); return; }
                 if(this.zone===2) { this.zone=0; this.idx=this.lastCatIdx; this.updateFocus(); return; }
                 if(this.zone===1) { this.zone=2; this.idx=0; this.updateFocus(); return; }
-                if(this.zone===0) { this.logout(); return; } // Retorna para o Login
             },
             
             updateFocus: function() {
@@ -650,6 +649,9 @@
             if(k===403||k===82) if(App.scr===2) App.toggleFull(); 
             if(k===404||k===71) if(App.scr===2) { App.zone=0; App.idx=0; App.updateFocus(); } 
             if(k===405||k===89) if(App.scr===2) { App.zone=1; App.updateFocus(); } 
+            
+            // Botão Azul para "Trocar Conta / Sair"
+            if(k===406||k===66) if(App.scr===2) { e.preventDefault(); App.logout(); } 
         });
     </script>
 </body>
